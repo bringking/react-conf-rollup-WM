@@ -55,6 +55,13 @@
     hoist-non-react-statics "^2.5.5"
     prop-types "^15.6.1"
 
+"@rebass/grid@^6.0.0-4":
+  version "6.0.0-4"
+  resolved "https://registry.npmjs.org/@rebass/grid/-/grid-6.0.0-4.tgz#95bb4367ddfd0d955e256fcd46ea26adb02411eb"
+  integrity sha512-a+bnjwNLoborCUtzHPo8KAJKFq/f1zREA1X61sF53229st3eifZ/51dwzmEPSJV+K/BVkH9N/8G5W8JjHcgQ4A==
+  dependencies:
+    styled-system "^3.1.6"
+
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
   resolved "https://registry.npmjs.org/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
@@ -5574,7 +5581,7 @@ styled-components@^3.4.9:
     stylis-rule-sheet "^0.0.10"
     supports-color "^3.2.3"
 
-styled-system@^3.0.1, styled-system@^3.1.4:
+styled-system@^3.0.1, styled-system@^3.1.4, styled-system@^3.1.6:
   version "3.1.11"
   resolved "https://registry.npmjs.org/styled-system/-/styled-system-3.1.11.tgz#a91a38cf7a0f0e625b897a04fdd506a359a3629f"
   integrity sha512-d0p32F7Y55uRWNDb1P0JcIiGVi13ZxiSCvn8zNS68exAKW9Q5jp+IGTXUIavQOD/J8r3tydtE3vRk8Ii2i39HA==
