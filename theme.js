@@ -1,12 +1,12 @@
 // Example theme.js
-import { dark } from 'mdx-deck/themes'
+import { future } from 'mdx-deck/themes'
 
 export default {
   // extends the default theme
-  ...dark,
+  ...future,
   // custom colors
   colors: {
-    ...dark.colors, // include existing theme colors
+    ...future.colors, // include existing theme colors
     text: '#00CDBE',
     background: 'black',
     link: '#005F5C',

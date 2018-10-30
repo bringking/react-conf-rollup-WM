@@ -6,10 +6,11 @@
   "author": "Charles King <bringking@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "mdx-deck deck.mdx",
-    "build": "mdx-deck build deck.mdx"
+    "start": "mdx-deck deck.js",
+    "build": "mdx-deck build deck.js"
   },
   "dependencies": {
+    "@rebass/grid": "^6.0.0-4",
     "mdx": "^0.3.1",
     "mdx-deck": "^1.7.7",
     "react": "^16.7.0-alpha.0",
