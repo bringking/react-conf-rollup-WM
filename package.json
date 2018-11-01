@@ -8,7 +8,7 @@
   "scripts": {
     "start": "http-server dist",
     "dev": "mdx-deck deck.js",
-    "build": "mdx-deck build deck.js"
+    "build": "mdx-deck build deck.js --no-html"
   },
   "dependencies": {
     "@rebass/grid": "^6.0.0-4",
