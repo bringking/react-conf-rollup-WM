@@ -1,1 +1,42 @@
 # Profiler
+---
+<img src={require("file-loader!./profiler.png")}/>
+---
+### We can use this now*
+<small>If we upgrade to > 16.5</small>
+---
+### Use Memo
+---
+```jsx
+import { useMemo } from 'react';
+
+function Typeahead({users}) {
+  const filteredusers = useMemo(
+    () => filterUsers(users, searchText),
+    [users, searchText]
+  );
+  
+  return (
+    <>
+      <UserList users={filteredUsers}/>
+    </>
+  );
+}
+```
+---
+### Trace Api
+---
+```javascript
+import { unstable_trace as trace } from 'scheduler/tracing';
+
+trace(
+  "Label",
+  performance.now(),
+  () => {
+    // code goes here
+  }
+)
+```
+---
+<img src={require("file-loader!./trace.png")} />
+
