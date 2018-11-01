@@ -1,1 +1,98 @@
+import LightLayout from './layouts/light';
+import { Flex, Box } from '@rebass/grid'
+import { CodeSurfer } from "mdx-deck-code-surfer"
+
 # Suspense
+---
+## Concurrent React
+
+<Flex>
+  <Box>
+    <h3>Time-slicing</h3>
+    <div style={{textAlign: 'left'}}>
+      <p>Rendering is <b>non-blocking</b> – yields to user input</p>
+      <p>Coordinate multiple updates at <b>different priorities</b></p>
+      <p><b>Prerender</b> content in the background without slowing down visible content</p>
+    </div>
+  </Box>
+  <Box>
+    <h3>Suspense</h3>
+    <div style={{textAlign: 'right'}}>
+      <p><b>Access async data</b> from a server as easily as sync data from memory</p>
+      <p>Pause a component's render <b>without blocking siblings</b></p>
+      <p>Precisely control loading states to <b>reduce jank</b></p>
+    </div>
+  </Box>
+</Flex>
+
+---
+## The `Suspense` Component
+
+- Used like Error Boundaries
+- React traverses back up the tree to find the nearest Suspense component
+- `fallback` and `maxDuration` props
+- Works both in Sync and Concurrent mode
+---
+# Experimental packages
+---
+## Scheduler
+
+For cooperative scheduling in a browser environment.
+---
+<CodeSurfer
+  title="Scheduler Usage"
+  code={require("!raw-loader!./snippets/scheduler")}
+  lang="javascript"
+  showNumbers={false}
+  dark={false}
+  steps={[
+    { notes: ""},
+    { range: [1, 1], notes: "import" },
+    { range: [12, 17], notes: "wrapping updates in defer hints to react that this is a lower priority update, suspense fallback doesn't show immediately." },
+  ]}
+/>
+---
+## React Cache
+
+A basic cache for React applications.
+It also serves as a reference for more advanced caching implementations.
+---
+<CodeSurfer
+  title="React Cache Resource"
+  code={require("!raw-loader!./snippets/react-cache-resource")}
+  lang="javascript"
+  showNumbers={false}
+  dark={false}
+  steps={[
+    { notes: ""},
+    { range: [1, 1], notes: "import" },
+    { range: [3, 5], notes: "create a resource by wrapping a function that returns a promise" },
+    { range: [8, 8], notes: "read from the resource" },
+    { range: [7, 14], notes: "no fallbacks, treated like in memory synchronous data"}
+  ]}
+/>
+---
+<CodeSurfer
+  title="Suspense :allthethings:"
+  code={require("!raw-loader!./snippets/suspense-lqip-image")}
+  lang="javascript"
+  showNumbers={false}
+  dark={false}
+  steps={[
+    { notes: ""},
+    { range: [4, 10], notes: "create a resource for image loading" },
+    { range: [13, 15], notes: "Img component that reads from the resource" },
+    { range: [19, 20], notes: "Img wrapped in Suspense" },
+    { range: [21, 26], notes: "fallback LQIP"},
+    { range: [28, 28], notes: "full quality image"}
+  ]}
+/>
+---
+export default LightLayout
+
+### What does this mean for Weedmaps?
+---
+* Suspense is only client-side for now
+* React core team is actively working on the SSR side now
+* Next.js team is invested in this as well
+* So … quite not yet.
